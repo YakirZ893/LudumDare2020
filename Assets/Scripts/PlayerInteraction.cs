@@ -12,17 +12,12 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         GameObject go = other.gameObject;
-        if (other.gameObject.tag == "CanBeGrabbed" && Input.GetKeyDown(KeyCode.E))
-        {
-            
-            go.transform.parent = this.transform;
-        }
+        if (other.gameObject.tag == "CanBeGrabbed" && Input.GetKeyDown(KeyCode.E))    
+            go.transform.parent = this.transform; 
 
         if (Input.GetKeyUp(KeyCode.E) && go.transform.IsChildOf(this.transform))
-        {
-            go.transform.parent = null;
-            
-        }
+            go.transform.parent = null;   
+
     }
   
 }
