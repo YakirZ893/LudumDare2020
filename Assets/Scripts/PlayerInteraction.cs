@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
 {
     SphereCollider SC;
     public Transform holdtrans;
-    private bool isholding;
+    public bool isholding;
     void Start()
     {
         isholding = false;
@@ -16,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         GameObject go = other.gameObject;
+
         if (other.gameObject.tag == "CanBeGrabbed" && Input.GetButtonDown("Fire1"))
         {
             go.transform.parent = this.transform;
@@ -23,8 +24,10 @@ public class PlayerInteraction : MonoBehaviour
             go.transform.position = holdtrans.position;
             go.GetComponent<Rigidbody>().isKinematic = true;
         }
-        if (Input.GetButtonDown("Fire2") && isholding && gameObject.tag == "CanBeGrabbed")
+
+        if (Input.GetButtonDown("Fire2") && isholding && other.gameObject.tag == "CanBeGrabbed")
         {
+           
             go.transform.parent = null;
             go.GetComponent<Rigidbody>().isKinematic = false;
             

@@ -7,10 +7,10 @@ public class NewPlayerMovement : MonoBehaviour
     public float playerSpeed = 2.0f;
     public float jumpHeight = 1.0f;
     public float fallingSpeed = 1.0f;
+    public bool groundedPlayer;
 
     private float gravityValue = -9.81f;
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
     private CharacterController controller;
 
     private void Start()
