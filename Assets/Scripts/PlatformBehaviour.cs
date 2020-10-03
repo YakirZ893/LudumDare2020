@@ -12,6 +12,7 @@ public class PlatformBehaviour : MonoBehaviour
     private void OnCollisionStay(Collision collision)
     {
         collision.transform.parent = this.transform;
+        print(collision.gameObject.name);
     }
     private void OnCollisionExit(Collision collision)
     {
