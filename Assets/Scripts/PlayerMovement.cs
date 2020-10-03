@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool isRecording;
     public Transform playerspawn;
     public GameObject PlayerPrefab;
-  
     public AnimationClip clip;
     private GameObjectRecorder m_Recorder;
     [SerializeField] private Animator animator;
@@ -29,11 +28,7 @@ public class PlayerMovement : MonoBehaviour
         isRecording = false;
         m_Recorder = new GameObjectRecorder(this.gameObject);
         m_Recorder.BindComponentsOfType<Transform>(gameObject, true);
-        animator= GetComponent<Animator>();
-        
-        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-        animator.runtimeAnimatorController = animatorOverrideController;
-        
+        animator= GetComponent<Animator>();  
     }
     private void FixedUpdate()
     {
@@ -72,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     public void StartRecording()
     {
         print("Recording Started");
-        //animator.SetBool("IsPlaying", false);
+        animator.SetBool("IsPlaying", false);
         isRecording = true;
         StartCoroutine(StopRecording());
     }
@@ -87,15 +82,18 @@ public class PlayerMovement : MonoBehaviour
     }    
     public void PlayRecording()
     {
-       // GetComponent<MeshRenderer>().enabled = true;
-        //animator.SetBool("IsPlaying",true);
-        animator.Play(clip.name);
+        // GetComponent<MeshRenderer>().enabled = true;
+        animator.SetBool("IsPlaying",true);
+        //animator.Play(clip.name);
     }
     public void Rewind()
     {
         AnimationClip newclip = new AnimationClip();
         animator.StopPlayback();
-        clip = animatorOverrideController["PlayerMovementRecording"];   
+        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        animator.runtimeAnimatorController = animatorOverrideController;
+        animatorOverrideController["PlayerMovementRecording"] = newclip;
+        clip = newclip;
     }
 
    
