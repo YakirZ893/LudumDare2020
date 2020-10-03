@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
             return;    
         }
     }
-    private void resetJumps()
+    private void ResetJumps()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position,-Vector3.up, out hit, 1f))
