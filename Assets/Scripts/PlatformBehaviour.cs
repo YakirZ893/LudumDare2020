@@ -8,14 +8,16 @@ public class PlatformBehaviour : MonoBehaviour
     void Start()
     {
         BC = this.GetComponent<BoxCollider>();
+        
     }
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        collision.transform.parent = this.transform;
-        print(collision.gameObject.name);
+        //collision.transform.parent = this.transform;
+        collision.collider.transform.SetParent(transform);
     }
     private void OnCollisionExit(Collision collision)
     {
-        collision.transform.parent = null;
+        //collision.transform.parent = null;
+        collision.collider.transform.SetParent(null);
     }
 }
