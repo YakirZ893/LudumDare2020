@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public AnimationClip clip;
     private GameObjectRecorder m_Recorder;
     [SerializeField] private Animator animator;
-   public AnimatorOverrideController animatorOverrideController;
+    public AnimatorOverrideController animatorOverrideController;
     
     
 
