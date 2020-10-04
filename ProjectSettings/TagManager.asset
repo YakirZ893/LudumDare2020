@@ -9,6 +9,9 @@ TagManager:
   - CanBeGrabbed
   - Platform
   - Recording
+  - Enemy
+  - LastPosition
+  - Target
   layers:
   - Default
   - TransparentFX

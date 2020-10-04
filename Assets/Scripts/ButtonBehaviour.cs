@@ -1,35 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class ButtonBehaviour : MonoBehaviour
-{
-    public GameObject Platform;
+{  
     public Animator anim;
+  
+    public bool isbuttonclicked;
+    public bool isbuttonclickedcannon;
 
-    private Animator PlatformAnim;
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerStay(Collider other)
     {
-        PlatformAnim = Platform.GetComponent<Animator>();
+        if(other.gameObject.tag == "Player" || other.gameObject.tag =="Recording")
+        anim.SetBool("ButtonPressed", true);
+        isbuttonclicked = true;
+        isbuttonclickedcannon = true;
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-    anim.SetBool("ButtonPressed", true);
-    PlatformAnim.SetBool("Moving", true);
-
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        anim.SetBool("ButtonPressed", false);
-        //PlatformAnim.SetBool("Moving", false); // returns to first animation keyframe/initial position once button is unpressed
-
-    }
-
+      private void OnTriggerExit(Collider other)
+        {
+            anim.SetBool("ButtonPressed", false);
+            isbuttonclicked = false;
+        isbuttonclickedcannon = false;
+            
+        }
 
 }
+
+ 
