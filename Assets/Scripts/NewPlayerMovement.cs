@@ -27,10 +27,23 @@ public class NewPlayerMovement : MonoBehaviour
         {
             playerVelocity.y = 0f;
             isjumping = false;
+
+            
         }
 
         Vector3 move = new Vector3(0, 0, Input.GetAxis("Horizontal"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        //controller.Move(move * Time.deltaTime * playerSpeed);
+
+
+
+        if(Input.GetAxis("Horizontal") > 0)
+            transform.Translate(move * playerSpeed * Time.deltaTime );
+
+        if(Input.GetAxis("Horizontal") < 0)
+        {
+            transform.Translate(-move * playerSpeed * Time.deltaTime);
+        }
 
         if (move != Vector3.zero)
         {
