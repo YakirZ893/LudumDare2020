@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ReplayManager : MonoBehaviour
 {
     [SerializeField] private Transform[] transforms;
+    [SerializeField] private Animator[] animators;
 
     private MemoryStream memoryStream = null;
     private BinaryWriter binaryWriter = null;
@@ -187,6 +188,7 @@ public class ReplayManager : MonoBehaviour
         {
             SaveTransform(transform);
         }
+     
     }
     public void Rewind()
     {
@@ -225,15 +227,11 @@ public class ReplayManager : MonoBehaviour
     }
     private void SpawnPlayer()
     {
-        GameObject goplayer = (GameObject.FindGameObjectWithTag("Player"));  
-        Destroy(goplayer);
         Instantiate(prefab, playerspawn.position, Quaternion.identity);
-
-        /*GameObject gorecord = GameObject.FindGameObjectWithTag("Recording");
-        gorecord.GetComponent<CharacterController>().enabled = false;
-        gorecord.GetComponent<MeshRenderer>().enabled = true;
-        gorecord.GetComponent<CapsuleCollider>().enabled = true;
-        gorecord.GetComponent<SphereCollider>().enabled = true;
-        */
-    }
+        GameObject go = GameObject.FindGameObjectWithTag("Recording");
+        go.GetComponent<Animator>().enabled = false;
+        go.GetComponent<PlayerInteraction>().enabled = false;
+        go.GetComponent<NewPlayerMovement>().enabled = false;
+        go.GetComponent<CharacterController>().enabled = false;
+     }
 }

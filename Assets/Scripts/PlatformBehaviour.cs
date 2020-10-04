@@ -10,10 +10,11 @@ public class PlatformBehaviour : MonoBehaviour
         BC = this.GetComponent<BoxCollider>();
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        //collision.transform.parent = this.transform;
-        collision.collider.transform.SetParent(transform);
+        print(collision.gameObject.name);
+        if(collision.gameObject.tag == "Player" || collision.gameObject.tag == "Recording")
+        collision.collider.transform.SetParent(this.gameObject.transform);
     }
     private void OnCollisionExit(Collision collision)
     {
