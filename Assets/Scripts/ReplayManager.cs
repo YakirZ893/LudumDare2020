@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class ReplayManager : MonoBehaviour
 {
@@ -69,6 +70,7 @@ public class ReplayManager : MonoBehaviour
         if (!recordingInitialized)
         {
             InitializeRecording();
+            
         }
         else
         {
@@ -125,10 +127,10 @@ public class ReplayManager : MonoBehaviour
             StartReplaying();
             SpawnPlayer();
         }
-        else
-        {
-            StopReplaying();
-        }
+        //else
+        //{
+         //   StopReplaying();
+        //}
     }
 
     private void StartReplaying()
@@ -186,6 +188,11 @@ public class ReplayManager : MonoBehaviour
             SaveTransform(transform);
         }
     }
+    public void Rewind()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
 
     private void SaveTransform(Transform transform)
     {
@@ -218,8 +225,15 @@ public class ReplayManager : MonoBehaviour
     }
     private void SpawnPlayer()
     {
+        GameObject goplayer = (GameObject.FindGameObjectWithTag("Player"));  
+        Destroy(goplayer);
         Instantiate(prefab, playerspawn.position, Quaternion.identity);
-        GetComponent<CharacterController>().enabled = false;
-       
+
+        /*GameObject gorecord = GameObject.FindGameObjectWithTag("Recording");
+        gorecord.GetComponent<CharacterController>().enabled = false;
+        gorecord.GetComponent<MeshRenderer>().enabled = true;
+        gorecord.GetComponent<CapsuleCollider>().enabled = true;
+        gorecord.GetComponent<SphereCollider>().enabled = true;
+        */
     }
 }

@@ -14,7 +14,7 @@ public class ReplayPanelController : MonoBehaviour
         replayManager.OnStartedRecording += OnStartedRecording;
         replayManager.OnStoppedRecording += OnStoppedRecording;
         replayManager.OnStartedReplaying += OnStartedReplaying;
-        replayManager.OnStoppedReplaying += OnStoppedReplaying;
+       // replayManager.OnStoppedReplaying += OnStoppedReplaying;
     }
 
     private void OnDisable()
@@ -22,7 +22,7 @@ public class ReplayPanelController : MonoBehaviour
         replayManager.OnStartedRecording -= OnStartedRecording;
         replayManager.OnStoppedRecording -= OnStoppedRecording;
         replayManager.OnStartedReplaying -= OnStartedReplaying;
-        replayManager.OnStoppedReplaying -= OnStoppedReplaying;
+        //replayManager.OnStoppedReplaying -= OnStoppedReplaying;
     }
 
     void OnStartedRecording()
@@ -42,9 +42,9 @@ public class ReplayPanelController : MonoBehaviour
         startStopRecordButton.interactable = false;
     }
 
-    void OnStoppedReplaying()
-    {
-        startStopReplayButtonText.text = "Start Replay";
-        startStopRecordButton.interactable = true;
-    }
+   // void OnStoppedReplaying()
+   // {
+    //    startStopReplayButtonText.text = "Start Replay";
+     //   startStopRecordButton.interactable = true;
+   // }
 }

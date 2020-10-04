@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - CanBeGrabbed
   - Platform
+  - Recording
   layers:
   - Default
   - TransparentFX
