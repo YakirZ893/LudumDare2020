@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    SphereCollider SC;
+    
     public Transform holdtrans;
     public bool isholding;
     void Start()
     {
         isholding = false;
-        SC = GetComponent<SphereCollider>();
+        
     }
     private void OnTriggerStay(Collider other)
     {
