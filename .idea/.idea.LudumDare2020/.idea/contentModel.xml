@@ -13,8 +13,6 @@
           <e p="NewPlayerMovement.cs" t="Include" />
           <e p="PlatformBehaviour.cs" t="Include" />
           <e p="PlayerInteraction.cs" t="Include" />
-          <e p="PlayerMovement.cs" t="Include" />
-          <e p="RecordingSystem.cs" t="Include" />
           <e p="ReplayManager.cs" t="Include" />
           <e p="ReplayPanelController.cs" t="Include" />
           <e p="SimpleCameraController.cs" t="Include" />

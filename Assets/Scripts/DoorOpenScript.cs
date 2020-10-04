@@ -1,18 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorOpenScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator doorAnim;
+    public Material doorKnob;
+    public float emisSTR = 2f;
+
+    private void Start()
     {
-        
+        doorKnob.color = Color.red;
+        doorKnob.SetColor("_EmissionColor", new Color(1f, 0f, 0f, 1f) * emisSTR);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player"))
+        {
+            doorAnim.SetTrigger("isOpen");
+            doorKnob.color = Color.green;
+            doorKnob.SetColor("_EmissionColor", new Color(0f, 1f, 0f, 1f) * emisSTR);
+        }
     }
 }
