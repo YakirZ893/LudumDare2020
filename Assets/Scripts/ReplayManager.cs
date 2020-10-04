@@ -1,34 +1,4 @@
-﻿/*
- * Copyright (c) 2020 Razeware LLC
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * Notwithstanding the foregoing, you may not use, copy, modify, merge, publish, 
- * distribute, sublicense, create a derivative work, and/or sell copies of the 
- * Software in any work that is designed, intended, or marketed for pedagogical or 
- * instructional purposes related to programming, coding, application development, 
- * or information technology.  Permission for such use, copying, modification,
- * merger, publication, distribution, sublicensing, creation of derivative works, 
- * or sale is expressly withheld.
- *    
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
-using System;
+﻿using System;
 using UnityEngine;
 using System.IO;
 
@@ -55,6 +25,8 @@ public class ReplayManager : MonoBehaviour
     public Action OnStartedReplaying;
     public Action OnStoppedReplaying;
 
+    public GameObject prefab;
+    public Transform playerspawn;
     public void Start()
     {
         transforms = FindObjectsOfType<Transform>();
@@ -84,7 +56,7 @@ public class ReplayManager : MonoBehaviour
         }
     }
 
-    private void InitializeRecording()
+    public void InitializeRecording()
     {
         memoryStream = new MemoryStream();
         binaryWriter = new BinaryWriter(memoryStream);
@@ -147,9 +119,11 @@ public class ReplayManager : MonoBehaviour
 
     public void StartStopReplaying()
     {
+        //need to change this in order to replay in a loop//
         if (!replaying)
         {
             StartReplaying();
+            SpawnPlayer();
         }
         else
         {
@@ -162,6 +136,7 @@ public class ReplayManager : MonoBehaviour
         ResetReplayFrame();
         StartReplayFrameTimer();
         replaying = true;
+       
         if (OnStartedReplaying != null)
         {
             OnStartedReplaying();
@@ -172,7 +147,8 @@ public class ReplayManager : MonoBehaviour
     {
         if (memoryStream.Position >= memoryStream.Length)
         {
-            StopReplaying();
+            ResetReplayFrame();
+            //StopReplaying();
             return;
         }
 
@@ -239,5 +215,11 @@ public class ReplayManager : MonoBehaviour
         y = binaryReader.ReadSingle();
         z = binaryReader.ReadSingle();
         transform.localScale = new Vector3(x, y, z);
+    }
+    private void SpawnPlayer()
+    {
+        Instantiate(prefab, playerspawn.position, Quaternion.identity);
+        GetComponent<CharacterController>().enabled = false;
+       
     }
 }

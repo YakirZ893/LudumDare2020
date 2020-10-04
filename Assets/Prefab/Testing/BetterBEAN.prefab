@@ -48,26 +48,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1507451779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6770832105670946161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2217b79247b494bbc919b8f504c777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRecording: 0
-  PlayerPrefab: {fileID: 0}
-  isthisarecording: 0
-  spawnpoint: {fileID: 0}
-  clip: {fileID: 7400000, guid: 5168fd0965ec32840b65bc3e3084e082, type: 2}
-  animator: {fileID: 0}
-  animatorOverrideController: {fileID: 22100000, guid: 9df3042265994e64185ad1c8d4bc3247,
-    type: 2}
 --- !u!114 &1507451787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,6 +63,7 @@ MonoBehaviour:
   playerSpeed: 2
   jumpHeight: 1
   fallingSpeed: 1
+  groundedPlayer: 0
 --- !u!1001 &2464877542044102016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,7 +104,7 @@ PrefabInstance:
     - target: {fileID: 9206434049897513201, guid: 86b8b03d92bf637479ece18f0cd4cb53,
         type: 3}
       propertyPath: m_Name
-      value: Player BEAN
+      value: BetterBEAN
       objectReference: {fileID: 0}
     - target: {fileID: 9206434049897513205, guid: 86b8b03d92bf637479ece18f0cd4cb53,
         type: 3}
@@ -180,7 +161,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9206434049897513166, guid: 86b8b03d92bf637479ece18f0cd4cb53, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 86b8b03d92bf637479ece18f0cd4cb53, type: 3}
 --- !u!1 &6770832105670946161 stripped
 GameObject:
