@@ -1,6 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9206434049897513201
+--- !u!1 &1624952782728829598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6770832106349123454, guid: 87c40b4f6a842cb459e2dca850e58e46,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624952782728829599}
+  m_Layer: 0
+  m_Name: HoldSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624952782728829599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 6770832106349123455, guid: 87c40b4f6a842cb459e2dca850e58e46,
+    type: 3}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624952782728829598}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5438710211729129846}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5438710211729129838
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,56 +40,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9206434049897513205}
-  - component: {fileID: 9206434049897513204}
-  - component: {fileID: 9206434049897513207}
-  - component: {fileID: 9206434049897513206}
-  - component: {fileID: 9206434049897513160}
-  - component: {fileID: 9206434049897513163}
-<<<<<<< Updated upstream:Assets/Prefab/Testing/Player BEAN.prefab
-  - component: {fileID: 9206434049897513161}
-=======
->>>>>>> Stashed changes:Assets/Prefab/Player BEAN.prefab
-  - component: {fileID: 9206434049897513166}
-  - component: {fileID: 6480154506613131602}
-  - component: {fileID: 7095867531256356429}
-  - component: {fileID: 782466502704239980}
+  - component: {fileID: 5438710211729129846}
+  - component: {fileID: 5438710211729129845}
+  - component: {fileID: 5438710211729129844}
+  - component: {fileID: 5438710211729129843}
+  - component: {fileID: 5438710211729129842}
+  - component: {fileID: 5438710211729129841}
+  - component: {fileID: 5438710211729129840}
+  - component: {fileID: 5438710211729129839}
+  - component: {fileID: 5438710211729129847}
   m_Layer: 0
-  m_Name: Player BEAN
+  m_Name: Player Testing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9206434049897513205
+--- !u!4 &5438710211729129846
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.33, y: 5.96, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.85362}
-  m_Children: []
+  m_LocalPosition: {x: 14.56, y: 5.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1624952782728829599}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &9206434049897513204
+--- !u!33 &5438710211729129845
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &9206434049897513207
+--- !u!23 &5438710211729129844
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -69,7 +97,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dfadfc2e09769734dbf2a0a5c0ed9258, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,40 +118,40 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &9206434049897513206
+--- !u!136 &5438710211729129843
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
-  m_Material: {fileID: 13400000, guid: 55badbe3cf00262498ed8414ec0888fa, type: 2}
+  m_GameObject: {fileID: 5438710211729129838}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &9206434049897513160
+--- !u!135 &5438710211729129842
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.33
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &9206434049897513163
+--- !u!54 &5438710211729129841
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -133,77 +161,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
-<<<<<<< Updated upstream:Assets/Prefab/Testing/Player BEAN.prefab
---- !u!114 &9206434049897513161
-=======
---- !u!95 &9206434049897513166
-Animator:
-  serializedVersion: 3
+--- !u!143 &5438710211729129840
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c659aab7a51c1aa48a170f41e8bbfdea, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6480154506613131602
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5438710211729129839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79c7900c9eefff640844a1e261f50664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 2
-  jumpHeight: 1
+  playerSpeed: 6
+  jumpHeight: 3
   fallingSpeed: 1
---- !u!114 &7095867531256356429
->>>>>>> Stashed changes:Assets/Prefab/Player BEAN.prefab
+  groundedPlayer: 0
+--- !u!114 &5438710211729129847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88fb2b81aa114c948a660120b182f06e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Assets/Prefab/Testing/Player BEAN.prefab
-  holdtrans: {fileID: 0}
---- !u!95 &9206434049897513166
-Animator:
-  serializedVersion: 3
-=======
-  isRecording: 0
-  clip: {fileID: 0}
-  animator: {fileID: 0}
-  animatorOverrideController: {fileID: 0}
---- !u!114 &782466502704239980
-MonoBehaviour:
->>>>>>> Stashed changes:Assets/Prefab/Player BEAN.prefab
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9206434049897513201}
+  m_GameObject: {fileID: 5438710211729129838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 420e09dab95be9d45b0177827b83e4be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdtrans: {fileID: 0}
+  holdtrans: {fileID: 1624952782728829599}
+  isholding: 0
