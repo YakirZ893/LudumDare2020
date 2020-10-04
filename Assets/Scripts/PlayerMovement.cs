@@ -42,7 +42,11 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpforce * Time.fixedDeltaTime, ForceMode.Impulse);
             isgrounded = false;
         }
+<<<<<<< Updated upstream
         ResetJumps();            
+=======
+                  
+>>>>>>> Stashed changes
     }
 
     private void LateUpdate()

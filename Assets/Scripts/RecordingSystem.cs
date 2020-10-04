@@ -6,25 +6,38 @@ using UnityEditor.Animations;
 public class RecordingSystem : MonoBehaviour
 {
     [SerializeField] bool isRecording;
+<<<<<<< Updated upstream
     public GameObject PlayerPrefab;
     [SerializeField] bool isthisarecording;
     [SerializeField] Transform spawnpoint;
 
     public AnimationClip clip;
     public AnimationClip emptyclip;
+=======
+    public AnimationClip clip;
+>>>>>>> Stashed changes
     private GameObjectRecorder m_Recorder;
     [SerializeField] private Animator animator;
     public AnimatorOverrideController animatorOverrideController;
 
+<<<<<<< Updated upstream
     void Start()
+=======
+    private void Start()
+>>>>>>> Stashed changes
     {
         isRecording = false;
         m_Recorder = new GameObjectRecorder(this.gameObject);
         m_Recorder.BindComponentsOfType<Transform>(gameObject, true);
         animator = GetComponent<Animator>();
+<<<<<<< Updated upstream
         
         
     }
+=======
+    }
+
+>>>>>>> Stashed changes
     private void LateUpdate()
     {
         if (isRecording)
@@ -35,6 +48,7 @@ public class RecordingSystem : MonoBehaviour
                 return;
         }
     }
+<<<<<<< Updated upstream
     public void StartRecording()
     {
         animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
@@ -42,6 +56,13 @@ public class RecordingSystem : MonoBehaviour
         print("Recording Started");
         animator.SetBool("IsPlaying", false);
         m_Recorder.ResetRecording();
+=======
+
+    public void StartRecording()
+    {
+        print("Recording Started");
+        animator.SetBool("IsPlaying", false);
+>>>>>>> Stashed changes
         isRecording = true;
         StartCoroutine(StopRecording());
     }
@@ -51,6 +72,7 @@ public class RecordingSystem : MonoBehaviour
         m_Recorder.SaveToClip(clip);
         isRecording = false;
         print("Recording stopped!");
+<<<<<<< Updated upstream
         GetComponent<NewPlayerMovement>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
@@ -82,3 +104,24 @@ public class RecordingSystem : MonoBehaviour
         
     }
 }
+=======
+        //Instantiate(PlayerPrefab,transform.position,Quaternion.identity);
+    }
+    public void PlayRecording()
+    {
+       
+        animator.SetBool("IsPlaying", true);
+        //animator.Play(clip.name);
+    }
+    public void Rewind()
+    {
+        AnimationClip newclip = new AnimationClip();
+        animator.StopPlayback();
+        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        animator.runtimeAnimatorController = animatorOverrideController;
+        animatorOverrideController["PlayerMovementRecording"] = newclip;
+        clip = newclip;
+    }
+
+}
+>>>>>>> Stashed changes
