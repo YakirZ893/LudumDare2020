@@ -228,8 +228,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: PickedUp
+  - m_ConditionMode: 1
+    m_ConditionEvent: PutDown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7253206645304078476}
@@ -292,6 +292,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: PickedUp
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PutDown
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -485,13 +491,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 3031480731510709694}
-    m_Position: {x: 140, y: 80, z: 0}
+    m_Position: {x: 180, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9037808769335285914}
-    m_Position: {x: 390, y: -30, z: 0}
+    m_Position: {x: 480, y: -20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3814623149352953316}
-    m_Position: {x: 290, y: -180, z: 0}
+    m_Position: {x: 60, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7253206645304078476}
     m_Position: {x: 580, y: 120, z: 0}
@@ -500,7 +506,7 @@ AnimatorStateMachine:
     m_Position: {x: 670, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2831076363244694781}
-    m_Position: {x: -110, y: -40, z: 0}
+    m_Position: {x: -160, y: -100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

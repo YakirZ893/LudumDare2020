@@ -24,6 +24,8 @@ public class AnimationManager : MonoBehaviour
 
     void Update()
     {
+        print(anim.GetBool("PickedUp"));
+        
        if(pm.iswalking)
         {
             anim.SetBool("iswalking", true);
@@ -41,7 +43,10 @@ public class AnimationManager : MonoBehaviour
             anim.SetBool("isjumping", false);
         }
 
+<<<<<<< Updated upstream
         print(anim.GetBool("PickedUp"));
+=======
+>>>>>>> Stashed changes
 
         if (pl.isholding)
         {
@@ -50,8 +55,14 @@ public class AnimationManager : MonoBehaviour
               
         }
 
-        
-    
+        if (!pl.isholding && anim.GetBool("PickedUp") == false && Input.GetButtonDown("Fire2"))
+        {
+            anim.SetBool("PutDown", true);
+        }
+
+
+
+
 
 
     }
