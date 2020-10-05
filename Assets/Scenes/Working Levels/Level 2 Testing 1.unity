@@ -590,7 +590,7 @@ PrefabInstance:
     - target: {fileID: 839427134369712247, guid: 87a3e68c83dbe4e4f847eb7caeca76e9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 839427134369712247, guid: 87a3e68c83dbe4e4f847eb7caeca76e9,
         type: 3}
@@ -726,6 +726,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Tile (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 101538665704772230, guid: 8ec33cdf0c8d386418a3abd31afefada,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3977774924778053781, guid: 8ec33cdf0c8d386418a3abd31afefada,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -764,7 +769,7 @@ PrefabInstance:
     - target: {fileID: 3977774924778053781, guid: 8ec33cdf0c8d386418a3abd31afefada,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3977774924778053781, guid: 8ec33cdf0c8d386418a3abd31afefada,
         type: 3}
@@ -983,7 +988,7 @@ PrefabInstance:
     - target: {fileID: 2172246667332484047, guid: 312e7050c0cced4479874ced5eaba87e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2172246667332484047, guid: 312e7050c0cced4479874ced5eaba87e,
         type: 3}
@@ -1278,7 +1283,7 @@ Transform:
   m_LocalScale: {x: 16.317999, y: 16.317999, z: 99.01435}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714384613
 GameObject:
@@ -2422,7 +2427,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 58faa738c01921d41bc2c69d2f3c9519,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 58faa738c01921d41bc2c69d2f3c9519,
         type: 3}
@@ -2588,7 +2593,7 @@ PrefabInstance:
     - target: {fileID: 2172246667332484047, guid: 312e7050c0cced4479874ced5eaba87e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2172246667332484047, guid: 312e7050c0cced4479874ced5eaba87e,
         type: 3}
@@ -3573,6 +3578,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground Tile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 101538665704772230, guid: 8ec33cdf0c8d386418a3abd31afefada,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 3977774924778053781, guid: 8ec33cdf0c8d386418a3abd31afefada,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3731,6 +3741,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718875616026443, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1171718875616026447, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
         type: 3}
