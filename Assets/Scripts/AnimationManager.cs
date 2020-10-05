@@ -41,7 +41,7 @@ public class AnimationManager : MonoBehaviour
             anim.SetBool("isjumping", false);
         }
 
-        print(anim.GetBool("PickedUp");
+        print(anim.GetBool("PickedUp"));
 
         if (pl.isholding)
         {
