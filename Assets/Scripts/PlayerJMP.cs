@@ -16,21 +16,22 @@ public class PlayerJMP : MonoBehaviour
 
    
 
-    void Update()
+    void FixedUpdate()
     {
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyUp(KeyCode.Space))
         {
-            //rb.velocity.y = 10.0f;
-
+            
+            
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
         
         }
-            isGrounded = false;
+        
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "CanBeGrabbed")
         {
             isGrounded = true;
 
