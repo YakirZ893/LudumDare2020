@@ -9,13 +9,25 @@ public class RecordingTime : MonoBehaviour
     public ReplayManager replayManager;
     void Update()
     {
-        if(replayManager.recording)
+        if (replayManager.recording && replayManager.currentRecordingFrames < replayManager.maxRecordingFrames) 
         {
-            this.GetComponent<TextMeshPro>().text = replayManager.currentRecordingFrames.ToString();
+            int recordingtime = replayManager.currentRecordingFrames / 60;
+            this.GetComponent<Text>().text=recordingtime.ToString();
+        }
+        else if (replayManager.currentRecordingFrames >= replayManager.maxRecordingFrames && !replayManager.recording)
+        {
+            this.GetComponent<Text>().text
+                = "Recording Done!";
+            StartCoroutine(Wait());
         }
         else
         {
-            this.GetComponent<TextMeshPro>().text = "Recording Done!";
+            this.GetComponent<Text>().text = "Waiting for recording..";
         }
+    }
+
+        IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f);
     }
 }

@@ -34,6 +34,8 @@ public class ReplayPanelController : MonoBehaviour
     {
         startStopRecordButtonText.text = "Start Recording";
         startStopReplayButton.interactable = true;
+        startStopRecordButton.interactable = false;
+        startStopRecordButton.image.color = new Color(0f, 0f, 0f, 0f);
     }
 
     void OnStartedReplaying()

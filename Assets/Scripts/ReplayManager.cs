@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class ReplayManager : MonoBehaviour
 {
     [SerializeField] private Transform[] transforms;
-    [SerializeField] private Animator[] animators;
 
     private MemoryStream memoryStream = null;
     private BinaryWriter binaryWriter = null;
@@ -22,6 +21,7 @@ public class ReplayManager : MonoBehaviour
 
     public int replayFrameLength = 2;
     private int replayFrameTimer = 0;
+    public int level;
 
     public Action OnStartedRecording;
     public Action OnStoppedRecording;
@@ -32,8 +32,10 @@ public class ReplayManager : MonoBehaviour
 
     public GameObject prefab;
     public Transform playerspawn;
+   
     public void Start()
     {
+        
         transforms = FindObjectsOfType<Transform>();
     }
 
@@ -73,8 +75,7 @@ public class ReplayManager : MonoBehaviour
     {
         if (!recordingInitialized)
         {
-            InitializeRecording();
-            
+            InitializeRecording();        
         }
         else
         {
@@ -197,18 +198,31 @@ public class ReplayManager : MonoBehaviour
     }
     public void Rewind()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        DoReset();
+         memoryStream.SetLength(0); 
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);   
+        SceneManager.LoadScene("Empty");   
+    }
+    private void DoReset()
+    {
+       // memoryStream.Dispose();
+       // binaryWriter.Dispose();
+       // binaryReader.Dispose();
+        transforms = new Transform[0];
     }
 
-    private void SaveTransform(Transform transform)
+    private void SaveTransform(Transform transformz)
     {
-        binaryWriter.Write(transform.localPosition.x);
-        binaryWriter.Write(transform.localPosition.y);
-        binaryWriter.Write(transform.localPosition.z);
-        binaryWriter.Write(transform.localScale.x);
-        binaryWriter.Write(transform.localScale.y);
-        binaryWriter.Write(transform.localScale.z);
+        if(transformz == null)
+        {
+            return;
+        }
+        binaryWriter.Write(transformz.localPosition.x);
+        binaryWriter.Write(transformz.localPosition.y);
+        binaryWriter.Write(transformz.localPosition.z);
+        binaryWriter.Write(transformz.localScale.x);
+        binaryWriter.Write(transformz.localScale.y);
+        binaryWriter.Write(transformz.localScale.z);
     }
 
     private void LoadTransforms(Transform[] transforms)
@@ -221,6 +235,10 @@ public class ReplayManager : MonoBehaviour
 
     private void LoadTransform(Transform transform)
     {
+        if(transform == null)
+        {
+            return;
+        }
         float x = binaryReader.ReadSingle();
         float y = binaryReader.ReadSingle();
         float z = binaryReader.ReadSingle();

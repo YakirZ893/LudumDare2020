@@ -3,11 +3,13 @@ using UnityEngine;
 using System;
 using UnityEngine.Assertions.Must;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+    public int level;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         Play("Theme");
+        level = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void Play(string name)
