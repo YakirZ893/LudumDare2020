@@ -20,10 +20,10 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-       Socket = other.gameObject;
 
         if (other.gameObject.tag == "CanBeGrabbed" && Input.GetButtonDown("Fire1"))
         {
+            Socket = other.gameObject;
             Socket.GetComponent<Rigidbody>().isKinematic = true;
             Socket.transform.parent = this.transform;
             //isholding = true;
@@ -41,11 +41,9 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
     IEnumerator wait()
-    {
-        
+    {      
         yield return new WaitForSeconds(timeToWait);
         isholding = true;
-
     }
 
 
@@ -54,7 +52,12 @@ public class PlayerInteraction : MonoBehaviour
         if (isholding)
         {
             Socket.transform.position = holdtrans.position;
-           
+            StartCoroutine(NoWait());
         }
+    }
+    IEnumerator NoWait()
+    {
+        yield return new WaitForSeconds(2f);
+        isholding = false;
     }
 }
