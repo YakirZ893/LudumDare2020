@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
             
         }
 
-        if (Input.GetButtonDown("Fire2") && isholding && other.gameObject.tag == "CanBeGrabbed")
+        if (Input.GetButton("Fire2") && isholding && other.gameObject.tag == "CanBeGrabbed")
         {
             isholding = false;
             go.transform.parent = null;

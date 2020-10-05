@@ -21,10 +21,17 @@ public class AnimationManager : MonoBehaviour
 
     }
 
+    public void EndPutDown()
+    {
+        anim.SetBool("PutDown", false);
+        anim.SetBool("PickedUp", false);
+
+    }
+
 
     void Update()
     {
-        print(anim.GetBool("PickedUp"));
+        
         
        if(pm.iswalking)
         {
@@ -54,13 +61,13 @@ public class AnimationManager : MonoBehaviour
               
         }
 
-        if (!pl.isholding && anim.GetBool("PickedUp") == false && Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && anim.GetBool("PickedUp") == true   )
         {
             anim.SetBool("PutDown", true);
         }
 
 
-
+        
 
 
 
