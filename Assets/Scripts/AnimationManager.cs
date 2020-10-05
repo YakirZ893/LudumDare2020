@@ -57,14 +57,14 @@ public class AnimationManager : MonoBehaviour
         if (pl.IsAnimating)
         {
 
-        anim.SetBool("PickedUp", true);
+            anim.SetBool("PickedUp", true);
               
         }
 
         if (Input.GetButtonDown("Fire2") && anim.GetBool("PickedUp") == true   )
         {
             anim.SetBool("PutDown", true);
-            anim.SetBool("PickedUp", true);
+            anim.SetBool("PickedUp", false);
         }
 
 

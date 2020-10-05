@@ -52,12 +52,9 @@ public class PlayerInteraction : MonoBehaviour
         if (isholding)
         {
             Socket.transform.position = holdtrans.position;
-            StartCoroutine(NoWait());
+            
         }
     }
-    IEnumerator NoWait()
-    {
-        yield return new WaitForSeconds(2f);
-        isholding = false;
-    }
+
+   
 }

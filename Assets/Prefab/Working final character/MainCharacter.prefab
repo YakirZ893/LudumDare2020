@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 9100003718984869896}
   - component: {fileID: 9100003718984869899}
   m_Layer: 0
-  m_Name: RB_Character
+  m_Name: MainCharacter
   m_TagString: Recording
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ CapsuleCollider:
   m_Radius: 3.25
   m_Height: 11.21
   m_Direction: 1
-  m_Center: {x: 0.077874385, y: 3.3, z: 0}
+  m_Center: {x: 0.077874385, y: 3.3, z: 0.63}
 --- !u!114 &9100003718984869899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8349585733612173448}
   m_LocalRotation: {x: -0.009906342, y: 0.006118203, z: -0.99545646, w: -0.09450381}
-  m_LocalPosition: {x: 0.0116, y: 0.0197, z: -0.0012}
+  m_LocalPosition: {x: 0.0119, y: 0.0205, z: 0.0053}
   m_LocalScale: {x: 0.0045384783, y: 0.0045384793, z: 0.0045384793}
   m_Children: []
   m_Father: {fileID: 8349585733495585291}
