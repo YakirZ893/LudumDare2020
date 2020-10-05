@@ -949,6 +949,92 @@ MonoBehaviour:
   startStopReplayButton: {fileID: 219485495}
   startStopReplayButtonText: {fileID: 531988188}
   replayManager: {fileID: 1451474876}
+--- !u!1001 &462874922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -49.659378
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2292209
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 33.5784
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382584, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718874599382586, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171718875616026447, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 99a95c5dc74bbdb4a80c45438ca2f106, type: 3}
+--- !u!114 &462874923 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1171718874599382587, guid: 99a95c5dc74bbdb4a80c45438ca2f106,
+    type: 3}
+  m_PrefabInstance: {fileID: 462874922}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe8f4d4b94fd643449455dffe1e587f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &517820353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2154,6 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dfaabd4a3b1d741b3930f16ae0b506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LevelLoader: {fileID: 462874923}
 --- !u!4 &1068798553
 Transform:
   m_ObjectHideFlags: 0
@@ -2162,8 +2249,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068798550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -0.47348687, z: 60.645344}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.45, y: -0.47349, z: 62.8}
+  m_LocalScale: {x: 1, y: 1, z: 6.4375}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11

@@ -1012,7 +1012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pl: {fileID: 6823606542422979789}
-  pm: {fileID: 9131039181491146461, guid: 8beca4e52279efd478048e6038953f78, type: 3}
+  pm: {fileID: 5990996043101809047}
+  PJ: {fileID: 2307433173302172834}
 --- !u!136 &5990996043101809002
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1041,7 +1042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6823606542422979633}
   speed: 10
-  IsGrounded: 0
+  iswalking: 0
 --- !u!136 &2307433173302172833
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1069,5 +1070,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: {x: 0, y: 0, z: 0}
-  jumpForce: 5
+  jumpForce: 2.5
   isGrounded: 0

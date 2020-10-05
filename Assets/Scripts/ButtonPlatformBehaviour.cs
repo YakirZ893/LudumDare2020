@@ -8,6 +8,7 @@ public class ButtonPlatformBehaviour : MonoBehaviour
     [SerializeField] private Transform PlatformTarget;
     [SerializeField] private Transform StartPoint;
     private float time;
+    [Range(0,1)]
     [SerializeField] float speed;
 
     private void Update()
