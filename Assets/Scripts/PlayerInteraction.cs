@@ -8,6 +8,11 @@ public class PlayerInteraction : MonoBehaviour
     
     public Transform holdtrans;
     public bool isholding;
+    public bool IsAnimating;
+    public float timeToWait = 0;
+
+    private GameObject Socket;
+
     void Start()
     {
         isholding = false;
@@ -15,26 +20,29 @@ public class PlayerInteraction : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        GameObject go = other.gameObject;
+       Socket = other.gameObject;
 
         if (other.gameObject.tag == "CanBeGrabbed" && Input.GetButtonDown("Fire1"))
         {
-            go.transform.parent = this.transform;
-            isholding = true;
-            go.transform.position = holdtrans.position;
-            go.GetComponent<Rigidbody>().isKinematic = true;
+            Socket.transform.parent = this.transform;
+            //isholding = true;
+            IsAnimating = true;
+            StartCoroutine("wait");
             
         }
 
         if (Input.GetButton("Fire2") && isholding && other.gameObject.tag == "CanBeGrabbed")
         {
+            IsAnimating = false;
             isholding = false;
-            go.transform.parent = null;
-            go.GetComponent<Rigidbody>().isKinematic = false;
+            Socket.transform.parent = null;
+            Socket.GetComponent<Rigidbody>().isKinematic = false;
 
 
         }
 
+
+        
         
 
         
@@ -42,5 +50,23 @@ public class PlayerInteraction : MonoBehaviour
 
 
     }
-  
+
+    IEnumerator wait()
+    {
+        
+        yield return new WaitForSeconds(timeToWait);
+        isholding = true;
+
+    }
+
+
+    private void Update()
+    {
+        if (isholding)
+        {
+
+            Socket.transform.position = holdtrans.position;
+            Socket.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
 }

@@ -54,7 +54,7 @@ public class AnimationManager : MonoBehaviour
 
 
 
-        if (pl.isholding)
+        if (pl.IsAnimating)
         {
 
         anim.SetBool("PickedUp", true);
@@ -64,6 +64,7 @@ public class AnimationManager : MonoBehaviour
         if (Input.GetButtonDown("Fire2") && anim.GetBool("PickedUp") == true   )
         {
             anim.SetBool("PutDown", true);
+            anim.SetBool("PickedUp", true);
         }
 
 
