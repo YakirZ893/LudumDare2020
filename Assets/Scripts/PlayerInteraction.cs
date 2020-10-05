@@ -23,16 +23,21 @@ public class PlayerInteraction : MonoBehaviour
             isholding = true;
             go.transform.position = holdtrans.position;
             go.GetComponent<Rigidbody>().isKinematic = true;
+            
         }
 
         if (Input.GetButtonDown("Fire2") && isholding && other.gameObject.tag == "CanBeGrabbed")
         {
-           
+            isholding = false;
             go.transform.parent = null;
             go.GetComponent<Rigidbody>().isKinematic = false;
-            
+
 
         }
+
+        
+
+        
             
 
 
