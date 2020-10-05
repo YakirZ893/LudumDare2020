@@ -40,6 +40,9 @@ public class ReplayPanelController : MonoBehaviour
     {
         startStopReplayButtonText.text = "Stop Replay";
         startStopRecordButton.interactable = false;
+        startStopReplayButton.enabled = false;
+        startStopReplayButtonText.enabled = false;
+        startStopReplayButton.image.color = new Color(0f, 0f, 0f, 0f);
     }
 
    // void OnStoppedReplaying()
