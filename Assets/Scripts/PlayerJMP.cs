@@ -6,7 +6,7 @@ public class PlayerJMP : MonoBehaviour
 {
     public Vector3 jump;
     public float jumpForce = 2.0f;
-    public bool isGrounded;
+    public bool isGrounded = true;
     Rigidbody rb;
     void Start()
     {
@@ -18,7 +18,7 @@ public class PlayerJMP : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isGrounded && Input.GetKeyUp(KeyCode.Space))
+        if (isGrounded && Input.GetKey(KeyCode.Space))
         {
             
             
