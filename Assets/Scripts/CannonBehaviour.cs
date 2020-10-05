@@ -21,6 +21,7 @@ public class CannonBehaviour : MonoBehaviour
     {
         if (Button.isbuttonclickedcannon && !hasshot)
         {
+            GameObject.FindObjectOfType<AudioManager>().Play("Cannon");
             anim.SetTrigger("Shoot");
             Instantiate(prefab, barrel.position, Quaternion.Euler(90f, 0, 0));
             Instantiate(smoke, barrel.position, Quaternion.Euler(-180f,0,0));

@@ -21,8 +21,8 @@ public class PlayerJMP : MonoBehaviour
     void FixedUpdate()
     {
         if (isGrounded && Input.GetKey(KeyCode.Space))
-        {  
-
+        {
+            GameObject.FindObjectOfType<AudioManager>().Play("Jump");
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
            GameObject go= Instantiate(smokePrefab, smoke.position, Quaternion.Euler(90,0,0));
             isGrounded = false;
@@ -30,10 +30,8 @@ public class PlayerJMP : MonoBehaviour
 
             Destroy(go, 1f);
         
-        }
-        
+        }     
     }
-
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "CanBeGrabbed")

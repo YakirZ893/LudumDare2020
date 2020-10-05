@@ -20,6 +20,7 @@ public class DoorOpenScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Recording"))
         {
             doorAnim.SetTrigger("isOpen");
+            GameObject.FindObjectOfType<AudioManager>().Play("Door");
             doorKnob.color = Color.green;
             doorKnob.SetColor("_EmissionColor", new Color(0f, 1f, 0f, 1f) * emisSTR);
         }

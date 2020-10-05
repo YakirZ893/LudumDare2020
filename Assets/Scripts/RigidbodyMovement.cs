@@ -8,14 +8,7 @@ public class RigidbodyMovement : MonoBehaviour
     public Rigidbody rb;
     public float speed;
     public bool iswalking;
-
-
-    
-
-
-
-   
-    
+  
 
     void Start()
     {
@@ -52,10 +45,7 @@ public class RigidbodyMovement : MonoBehaviour
 
         rb.velocity = new Vector3(0f, rb.velocity.y, Horizontal * speed);
         
-        
-            
-
-       
+      
     }
 }
 

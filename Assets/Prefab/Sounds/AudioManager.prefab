@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3785524380792452792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3785524380792452794}
+  - component: {fileID: 3785524380792452795}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3785524380792452794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785524380792452792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -165.98883, y: -46.96042, z: -22.714828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3785524380792452795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3785524380792452792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5ba75541b393140950dea830875128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: e92be703e54b7a24c8a01edeea69022a, type: 3}
+    volume: 0.623
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: Button
+    clip: {fileID: 8300000, guid: 7c36b8fa64f017042a4d0018856db039, type: 3}
+    volume: 0.3
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Cannon
+    clip: {fileID: 8300000, guid: 8f8bf2b2d046d794989f30f61d092220, type: 3}
+    volume: 0.437
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Door
+    clip: {fileID: 8300000, guid: e8afc1b2bf08bf846a942d6c7eaa3a24, type: 3}
+    volume: 0.526
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Jump
+    clip: {fileID: 8300000, guid: 45cc56bcd873cbc4d92bba1897b43a27, type: 3}
+    volume: 0.63
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

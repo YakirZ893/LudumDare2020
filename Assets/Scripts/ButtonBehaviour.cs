@@ -18,6 +18,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" || other.gameObject.tag =="Recording")
         anim.SetBool("ButtonPressed", true);
+        GameObject.FindObjectOfType<AudioManager>().Play("Button");
         isbuttonclicked = true;
         isbuttonclickedcannon = true;
         
