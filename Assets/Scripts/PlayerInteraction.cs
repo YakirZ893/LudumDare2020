@@ -24,6 +24,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (other.gameObject.tag == "CanBeGrabbed" && Input.GetButtonDown("Fire1"))
         {
+            Socket.GetComponent<Rigidbody>().isKinematic = true;
             Socket.transform.parent = this.transform;
             //isholding = true;
             IsAnimating = true;
@@ -37,20 +38,8 @@ public class PlayerInteraction : MonoBehaviour
             isholding = false;
             Socket.transform.parent = null;
             Socket.GetComponent<Rigidbody>().isKinematic = false;
-
-
         }
-
-
-        
-        
-
-        
-            
-
-
     }
-
     IEnumerator wait()
     {
         
@@ -64,9 +53,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (isholding)
         {
-
             Socket.transform.position = holdtrans.position;
-            Socket.GetComponent<Rigidbody>().isKinematic = true;
+           
         }
     }
 }
