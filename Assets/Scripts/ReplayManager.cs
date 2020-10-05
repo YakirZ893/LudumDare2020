@@ -14,10 +14,10 @@ public class ReplayManager : MonoBehaviour
     private BinaryReader binaryReader = null;
 
     private bool recordingInitialized = false;
-    private bool recording = false;
+    public bool recording = false;
     private bool replaying = false;
 
-    private int currentRecordingFrames = 0;
+  public int currentRecordingFrames = 0;
     public int maxRecordingFrames = 360;
 
     public int replayFrameLength = 2;
@@ -28,7 +28,7 @@ public class ReplayManager : MonoBehaviour
     public Action OnStartedReplaying;
     public Action OnStoppedReplaying;
 
-    public Button recordbutton;
+    
 
     public GameObject prefab;
     public Transform playerspawn;
@@ -79,6 +79,7 @@ public class ReplayManager : MonoBehaviour
         else
         {
             memoryStream.SetLength(0);
+
         }
         ResetReplayFrame();
 
@@ -106,8 +107,7 @@ public class ReplayManager : MonoBehaviour
         }
         --replayFrameTimer;
         ++currentRecordingFrames;
-        recordbutton.image.fillAmount -= (currentRecordingFrames/maxRecordingFrames);
-        print(recordbutton.image.fillAmount);
+       
     }
 
     private void StopRecording()

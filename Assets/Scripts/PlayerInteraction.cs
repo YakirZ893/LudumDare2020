@@ -51,10 +51,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (isholding)
         {
-            Socket.transform.position = holdtrans.position;
-            
+            Socket.transform.position = holdtrans.position;  
         }
     }
 
-   
 }
