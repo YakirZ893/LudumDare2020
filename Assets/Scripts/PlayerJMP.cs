@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerJMP : MonoBehaviour
