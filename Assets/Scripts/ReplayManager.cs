@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ReplayManager : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class ReplayManager : MonoBehaviour
     public Action OnStartedReplaying;
     public Action OnStoppedReplaying;
 
+    public Button recordbutton;
+
     public GameObject prefab;
     public Transform playerspawn;
     public void Start()
@@ -43,7 +46,7 @@ public class ReplayManager : MonoBehaviour
         else if (replaying)
         {
             UpdateReplaying();
-        }
+        }     
     }
 
     public void StartStopRecording()
@@ -103,6 +106,8 @@ public class ReplayManager : MonoBehaviour
         }
         --replayFrameTimer;
         ++currentRecordingFrames;
+        recordbutton.image.fillAmount -= (currentRecordingFrames/maxRecordingFrames);
+        print(recordbutton.image.fillAmount);
     }
 
     private void StopRecording()
@@ -231,7 +236,5 @@ public class ReplayManager : MonoBehaviour
         GameObject go = GameObject.FindGameObjectWithTag("Recording");
         go.GetComponent<Animator>().enabled = false;
         go.GetComponent<PlayerInteraction>().enabled = false;
-        go.GetComponent<NewPlayerMovement>().enabled = false;
-        go.GetComponent<CharacterController>().enabled = false;
      }
 }
