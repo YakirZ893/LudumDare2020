@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: {x: 0, y: 0, z: 0}
-  jumpForce: 2.5
+  jumpForce: 1.8
   isGrounded: 0
   smoke: {fileID: 2574049877404548229}
   smokePrefab: {fileID: 3694870939363990082, guid: 376c0d6179e539c4491af3fd0fd47c56,

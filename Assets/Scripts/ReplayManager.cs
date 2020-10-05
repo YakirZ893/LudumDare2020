@@ -199,9 +199,10 @@ public class ReplayManager : MonoBehaviour
     public void Rewind()
     {
         DoReset();
-         memoryStream.SetLength(0); 
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);   
-        SceneManager.LoadScene("Empty");   
+        memoryStream.SetLength(0); 
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);   
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);   
     }
     private void DoReset()
     {
