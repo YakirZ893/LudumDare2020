@@ -13,7 +13,15 @@ public class AnimationManager : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>(); 
-    }  
+    }
+
+    public void EndPickup()
+    {
+        anim.SetBool("PickedUp", false);
+
+    }
+
+
     void Update()
     {
        if(pm.iswalking)
@@ -32,6 +40,22 @@ public class AnimationManager : MonoBehaviour
         {
             anim.SetBool("isjumping", false);
         }
+
+        print(anim.GetBool("PickedUp");
+
+        if (pl.isholding)
+        {
+
+        anim.SetBool("PickedUp", true);
+              
+        }
+
         
+    
+
+
     }
+
+    
+    
 }
