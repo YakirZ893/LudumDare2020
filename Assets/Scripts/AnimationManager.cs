@@ -7,7 +7,8 @@ public class AnimationManager : MonoBehaviour
 {
     private Animator anim;
     public PlayerInteraction pl;
-    public NewPlayerMovement pm;
+    public RigidbodyMovement pm;
+    public PlayerJMP PJ;
 
     void Start()
     {
@@ -23,7 +24,7 @@ public class AnimationManager : MonoBehaviour
         {
             anim.SetBool("iswalking",false);
         }    
-       if(pm.isjumping)
+       if(!PJ.isGrounded)
         {
             anim.SetBool("isjumping", true);
         }
