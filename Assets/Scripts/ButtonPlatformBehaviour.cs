@@ -8,19 +8,20 @@ public class ButtonPlatformBehaviour : MonoBehaviour
     [SerializeField] private Transform PlatformTarget;
     [SerializeField] private Transform StartPoint;
     private float time;
+    [SerializeField] float speed;
 
     private void Update()
     {
         
         if(BB.isbuttonclicked)
         {
-         transform.position = Vector3.Lerp(transform.position, PlatformTarget.position, Time.deltaTime);
+         transform.position = Vector3.Lerp(transform.position, PlatformTarget.position, speed *  Time.deltaTime);
         }
 
         if (!BB.isbuttonclicked)
         {
             time = Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, StartPoint.position, time);
+            transform.position = Vector3.Lerp(transform.position, StartPoint.position,speed* time);
             if (time > 1)
             { 
                 time = 0;
